@@ -18,7 +18,8 @@ hold off
 
 function [x, t] = euler_mejorado(f, x0, a, b, n)
     h = (b-a)/n;
-    x = x0;
+    x = zeros(1, n+1);
+    x(1) = x0;
     t = a:h:b;
     for i=1:n
         k1 = f(t(i), x(i));
